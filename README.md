@@ -4,7 +4,6 @@ Data: 01/09/2020 a 04/09/2020 Horário: 9h às 18h
 
 ## Palestrantes
  - Daniel Oliveira Braga
- - Gustavo Rodovalho Oliveira
  
 ## Motivação
 Esse projeto tem o intuito de introduzir conceitos básicos e iniciais de React para desenvolvedores juniores.
