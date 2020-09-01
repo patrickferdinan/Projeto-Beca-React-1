@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSX Component</title>
+</head>
+<style>
+  .Selecao {
+    color: #3C8DB7;
+    font-family: courier, arial, helvetica;
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  h2{
+    color: #F4B121;
+    font-family: courier, arial, helvetica;
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+  .input {
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #D6E0E6;
+    -moz-box-shadow: 1px 1px 2px #D6E0E6;
+    -webkit-box-shadow: 1px 1px 2px #D6E0E6;
+    background: #cccccc;
+    border: 1px solid #000000;
+    width: 300px;
+    height: 30px;
+    margin-left: 30px;
+  }
+
+  .button {
+    border-color: #497295;
+    box-shadow: inset 0px 1px 0px 0px #e3f1e3;
+    color: BLACK;
+    text-shadow: 0px 1px 0px #2E4F6A;
+    margin: 0 15px;
+    width: 50px;
+    height: 40px;
+  }
+</style>
+
+<body style="background-color: #E6E6E6;">
+  <img style="float: right;width:300px; margin-right:10%"
+    src="https://lh3.googleusercontent.com/OWShEJ5iTQ4CK_lvnbSCIulcvFq9QV3AWB6BXB4iA7dfmCXytwXnTITq2PVTNPUDOlkx">
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById("root");
+
+    class Calculadora extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          a: 0,
+          b: 0,
+          resultado:0
+        };
+        this.handleChangea = this.handleChangea.bind(this);
+        this.handleChangeb = this.handleChangeb.bind(this);
+        this.soma = this.soma.bind(this);
+        this.subtracao = this.subtracao.bind(this);
+        this.multiplicacao = this.multiplicacao.bind(this);
+        this.divisao = this.divisao.bind(this);
+       
+      }
+      handleChangea(event) {
+        this.setState({ a: event.target.value});
+      }
+      handleChangeb(event) {
+        this.setState({ b: event.target.value});
+      }
+      soma(event){
+        let resultado=0;
+       resultado = parseInt(this.state.a) + parseInt(this.state.b);
+      //  alert(resultado);
+       this.setState({ resultado: resultado})
+  
+      }
+      subtracao(event){
+        let resultado=0;
+       resultado = parseInt(this.state.a) - parseInt(this.state.b);
+      //  alert(resultado);
+       this.setState({ resultado: resultado})
+      }
+      multiplicacao(event){
+        let resultado=0;
+       resultado = parseInt(this.state.a) * parseInt(this.state.b);
+      //  alert(resultado);
+      this.setState({ resultado: resultado})
+      }
+      divisao(event){
+        let resultado=0;
+       resultado = parseInt(this.state.a)/ parseInt(this.state.b);
+      //  alert(resultado);
+      this.setState({ resultado: resultado})
+      }
+
+
+      render() {
+        return (
+
+          <div>
+            <div className="Selecao" > Digite o primeiro Número </div>
+            <br />
+            <input type="number" className="input" value={this.state.a} onChange={this.handleChangea} />
+            <br />
+            <br />
+            <div className="Selecao"> Digite o segundo Número </div>
+            <br />
+            <input type="number" className="input" value={this.state.b}   onChange={this.handleChangeb}/>
+            <br />
+            <br />
+            <b className="Selecao">Selecione uma operação matemática:</b>
+            <button className="button" onClick={this.soma}> + </button>
+            <button className="button" onClick={this.subtracao}> - </button>
+            <button className="button" onClick={this.multiplicacao}> * </button>
+            <button className="button" onClick={this.divisao}> / </button>
+    
+
+            <h2>RESULTADO: {this.state.resultado}   </h2>
+
+        
+
+
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(
+      <Calculadora />,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+
+</html>
+
+
+
+
+<!-- Componente Input:
+receber uma prop
+receber uma prop de change para disparar um evento,
+criar um estilização própria. -->
