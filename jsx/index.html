@@ -28,39 +28,36 @@
         class Btt extends React.Component {
 
 
-
-          mudarCor=()=>{
-          let buton=  document.getElementById("color")
+          render() {
+            return (<div>
+              <button type="button" id="btt" onClick={this.props.onClick} >Event</button><br/>
+            
+            </div>)
+          }
+        }
+       const mudarCor=()=>{
+          let buton=  document.getElementById("btt")
             let r = Math.floor(Math.random() * 255),
               g = Math.floor(Math.random() * 255),
               b = Math.floor(Math.random() * 255);
               buton.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+              alertEvent()
+              mudarTamanho()
           }
-
-          alertEvent = () => {
+        const  alertEvent = () => {
             alert("Isso e um Alert ")
+            
           }
 
-          mudarTamanho=()=>{
-            let buton=  document.getElementById("ty"),
+        const  mudarTamanho=()=>{
+            let buton=  document.getElementById("btt"),
               w = Math.floor(Math.random() * 100),
               h = Math.floor(Math.random() * 100);
               buton.style.width=w+'%';
               buton.style.height=h+'%';
           }
 
-          render() {
-            return (<div>
-              <button type="button" class="btn btn-primary" onClick={this.alertEvent} >Event</button><br/>
-              <button type="button" id="color" class="btn" onClick={this.mudarCor} >Cor</button><br/>
-              <button type="button" id="ty" class="btn btn-dark" onClick={this.mudarTamanho}>Tamanho</button>
-            </div>)
-          }
-        }
-
-
-
-        ReactDOM.render(<Btt />, rootElement);
+        ReactDOM.render(<Btt onClick={mudarCor}/>, rootElement);
     </script>
   </body>
 </html>
