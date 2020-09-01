@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA</title>
+</head>
+
+<body>
+    <div id='root'></div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootst"></script>
+
+    <style>
+        *{
+            background: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: #000000;
+        }
+        div{
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 10%;
+            text-align: center;
+            width: 50%;
+        }
+    </style>
+    
+    <script type='text/babel'>
+        const rootElement = document.getElementById('root')
+
+        const lista = [
+            {count: 1, label: 'Televisão', href: 'Televisão 50 polegadas'},
+            {count: 2, label: 'Computador', href: 'Computador gamer'},
+            {count: 3, label: 'Celular', href: 'SmarthPhone Motorola'},
+            {count: 4, label: 'Monitor', href: 'Monitor LG 144hz'},
+            {count: 5, label: 'Xbox One', href: 'Video game Microsoft'},
+        ]
+
+        function getLista() {
+            return lista.map(list => {
+                return <li class="list-group-item" key={list.count}>{list.count} - {list.label} - {list.href}</li>
+            })
+        ReactDOM.render(element);
+        }
+
+        const element = (
+        <div class="list-group" >
+            <h2  href="#" class="list-group-item active">Itens da lista</h2>
+            <ul class="list-group">{getLista()}</ul>
+        </div>
+        )
+
+        getLista();
+
+
+        ReactDOM.render(element, rootElement);
+    </script>
+</body>
+
+</html>
