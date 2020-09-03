@@ -1,0 +1,22 @@
+.customInput {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.customInput input {
+  border: 1px solid #333;
+  border-radius: 4px;
+  height: 36px;
+  width: 100%;
+  padding-left: 8px;
+}
+
+.error {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 11px;
+  color: darkorange;
+  padding-left: 8px;
+}

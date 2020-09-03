@@ -10,3 +10,16 @@
   padding-right: 8px;
   list-style: none;
 }
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.dataUser {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
