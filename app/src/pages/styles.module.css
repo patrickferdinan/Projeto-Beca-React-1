@@ -1,1 +1,12 @@
-
+.box {
+  width: 100%;
+  background-color: cadetblue;
+}
+.headerBox ul {
+  display: flex;
+  margin: 0;
+}
+.headerBox ul LI {
+  padding-right: 8px;
+  list-style: none;
+}

@@ -1,0 +1,9 @@
+.item {
+  padding: 16px;
+  border: 1px solid #585858;
+  list-style: none;
+}
+
+.repoName {
+  font-weight: 600;
+}
