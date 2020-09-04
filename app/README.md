@@ -10,4 +10,4 @@
 
 Esse é nosso Layout
 
-![img](https://github.com/bragadaniel/Projeto-Beca-React/tree/master/app/src/assets/img)
+![img](https://github.com/bragadaniel/Projeto-Beca-React/blob/master/app/src/assets/img/github-app.png)
